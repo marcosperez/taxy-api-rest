@@ -1,14 +1,10 @@
 
 function UsuarioController() {
     var mongoose = require('mongoose');
-    mongoose.connect('mongodb://localhost/taxis');
-    
-    
+mongoose.connect('mongodb://localhost/taxis');
 }
 
 function get(req, res, next) {
-  var Nave = require('../../models/usuario');
-    
   res.status(200).json({ hello: 'world' });
 }
 
