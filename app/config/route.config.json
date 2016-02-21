@@ -4,6 +4,11 @@
       "route": "/v1/usuario",
       "method": "GET",
       "controller": "../controllers/v1/usuario/usuario-controller"
+    },
+      {
+      "route": "/v1/usuario",
+      "method": "POST",
+      "controller": "../controllers/v1/usuario/usuario-controller"
     }
   ]
 }
