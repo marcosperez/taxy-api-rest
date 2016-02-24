@@ -4,7 +4,7 @@ function UsuarioController() {
     var mongoose = require('mongoose');
     mongoose.connect('mongodb://localhost/taxis');
 
-    console.log("se conecto a la base de datos.");
+    //console.log("se conecto a la base de datos.");
 }
 
 function get(req, res, next) {
@@ -13,7 +13,6 @@ function get(req, res, next) {
     // Creación de variables para cargar el modelo
 
     var Usuario = require('../../../models/usuario');
-
 
 
     Usuario.find(function (err, users) {
