@@ -20,11 +20,12 @@ function post(req, res, next) {
         // Comprobar si hay errores
         // Si el usuario existe o no
         // Y si la contraseña es correcta
-            console.log(user);
+            console.log(user.nombre+"   "+user.contraseña);
 
-        if(user.contraseña == req.body.contraseña)
+        if(user.contraseña == req.body.contraseña);
         {
             //autenticacion correcta
+             console.log("Enviando token...");
              return res.status(200).send({token: UsuarioService.createToken(user)});
         }
         else
