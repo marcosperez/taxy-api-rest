@@ -14,11 +14,13 @@ function post(req, res, next) {
 
     var Usuario = require('../../../models/usuario');
 
+                console.log(req.body);
 
     Usuario.findOne({nombre: req.body.nombre.toLowerCase()}, function(err, user) {
         // Comprobar si hay errores
         // Si el usuario existe o no
         // Y si la contraseña es correcta
+            console.log(user);
 
         if(user.contraseña == req.body.contraseña)
         {
