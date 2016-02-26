@@ -1,14 +1,16 @@
 
 function UsuarioService() {
     // services.js
-var jwt = require('jwt-simple');
-var moment = require('moment');
 
-    var settingsConfig = require('../../config/settings/settings-config');
 
 }
 
 function createToken(user) {
+    var jwt = require('jwt-simple');
+var moment = require('moment');
+
+    var settingsConfig = require('../../config/settings/settings-config');
+
     console.log("creando token...");
    var payload = {
     sub: user._id,
