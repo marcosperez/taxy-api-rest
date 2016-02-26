@@ -3,7 +3,7 @@ function UsuarioController() {
 
     var mongoose = require('mongoose');
     mongoose.connect('mongodb://localhost/taxis');
-    var UsuarioService = req('../../../service/usuario/usuario-service');
+    var UsuarioService = require('../../../service/usuario/usuario-service');
 
     //console.log("se conecto a la base de datos.");
 }
