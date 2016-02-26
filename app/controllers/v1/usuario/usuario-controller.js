@@ -22,7 +22,7 @@ function post(req, res, next) {
         // Y si la contraseña es correcta
             console.log(user.nombre+"   "+user.contraseña);
 
-        if(user.contraseña == req.body.contraseña);
+        if(user.contraseña == req.body.contraseña)
         {
             //autenticacion correcta
              console.log("Enviando token...");
