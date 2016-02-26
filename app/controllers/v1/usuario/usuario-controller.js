@@ -3,7 +3,7 @@ function UsuarioController() {
 
     var mongoose = require('mongoose');
     mongoose.connect('mongodb://localhost/taxis');
-    var UsuarioService = require('../../../services/usuario/usuario-service');
+
 
     //console.log("se conecto a la base de datos.");
 }
@@ -15,6 +15,7 @@ function post(req, res, next) {
 
     var Usuario = require('../../../models/usuario');
                 console.log(req.body);
+    var UsuarioService = require('../../../services/usuario/usuario-service');
 
     Usuario.findOne({nombre: req.body.nombre.toLowerCase()}, function(err, user) {
         // Comprobar si hay errores
@@ -53,7 +54,7 @@ function get(req,res,next){
                                     contraseña: req.body.contrasenia,
                                     email: req.body.email
                                 });*/
-
+    var UsuarioService = require('../../../services/usuario/usuario-service');
     user.save(function (err,user
                         ) {
                             if (err) return console.error(err);
