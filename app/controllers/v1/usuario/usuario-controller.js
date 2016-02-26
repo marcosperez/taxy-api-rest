@@ -7,7 +7,7 @@ function UsuarioController() {
     //console.log("se conecto a la base de datos.");
 }
 
-function get(req, res, next) {
+function post(req, res, next) {
   //
 
     // Creación de variables para cargar el modelo
@@ -23,22 +23,19 @@ function get(req, res, next) {
         if(user.contraseña == req.body.contraseña)
         {
             //autenticacion correcta
-             return res
-            .status(200)
-            .send({token: service.createToken(user)});
+             return res.status(200).send({token: service.createToken(user)});
         }
         else
         {
             //error de autenticacion
-             return res
-            .status(401);
+             return res.status(401);
         }
 
 
     });
 }
 
-function post(req,res,next){
+function get(req,res,next){
 
     // Creación de variables para cargar el modelo
     console.log(req.body);
