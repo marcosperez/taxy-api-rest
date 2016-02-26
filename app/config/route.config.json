@@ -1,13 +1,13 @@
 {
   "routes": [
     {
-      "route": "/v1/usuario",
-      "method": "GET",
+      "route": "/auth/login",
+      "method": "POST",
       "controller": "../controllers/v1/usuario/usuario-controller"
     },
     {
-      "route": "/v1/usuario",
-      "method": "POST",
+      "route": "/auth/signup",
+      "method": "GET",
       "controller": "../controllers/v1/usuario/usuario-controller"
     },
     {
