@@ -3,6 +3,7 @@ function UsuarioController() {
 
     var mongoose = require('mongoose');
     mongoose.connect('mongodb://localhost/taxis');
+    var UsuarioService = req('../../../service/usuario/usuario-service');
 
     //console.log("se conecto a la base de datos.");
 }
@@ -13,7 +14,6 @@ function post(req, res, next) {
     // Creación de variables para cargar el modelo
 
     var Usuario = require('../../../models/usuario');
-
                 console.log(req.body);
 
     Usuario.findOne({nombre: req.body.nombre.toLowerCase()}, function(err, user) {
@@ -25,7 +25,7 @@ function post(req, res, next) {
         if(user.contraseña == req.body.contraseña)
         {
             //autenticacion correcta
-             return res.status(200).send({token: service.createToken(user)});
+             return res.status(200).send({token: UsuarioService.createToken(user)});
         }
         else
         {
@@ -45,7 +45,6 @@ function get(req,res,next){
     //console.log("Agregando usuario...."+req.body.nombre);
 
     var Usuario = require('../../../models/usuario');
-    var UsuarioService = req('../../../service/usuario/usuario-service');
 
     /*var user = new Usuario({
                                     nombre: req.body.nombre,

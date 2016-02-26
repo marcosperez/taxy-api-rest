@@ -9,6 +9,7 @@ var moment = require('moment');
 }
 
 function createToken(user) {
+    console.log("creando token...");
    var payload = {
     sub: user._id,
     iat: moment().unix(),
