@@ -1,7 +1,7 @@
 
 function NotaController() {
      var mongoose = require('mongoose');
-    mongoose.connect('mongodb://localhost/taxis');
+    //mongoose.connect('mongodb://localhost/taxis');
 
     //console.log("se conecto a la base de datos.");
 }

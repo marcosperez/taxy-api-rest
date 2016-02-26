@@ -1,6 +1,7 @@
 {
   "settings": [
     { "name": "queueLength", "value": 20 },
-    { "name": "TOKEN_SECRET"   , "value": "tokenultrasecreto" }
+    { "name": "TOKEN_SECRET"   , "value": "tokenultrasecreto" },
+     { "name": "hostName"   , "value": "127.0.0.1" }
   ]
 }
