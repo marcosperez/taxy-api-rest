@@ -42,12 +42,12 @@ function signup(req, res, next) {
     console.log(req.body);
     //console.log(res.json(req.body));;
     //console.log("Agregando usuario...."+req.body.nombre);
-    req.body.contraseña = req.body.password;
+    console.log(req.body);
     var Usuario = require('../../../models/usuario');
     var UsuarioService = require('../../../services/usuario/usuario-service');
     var user = new Usuario({
             nombre: req.body.nombre
-            , contraseña: req.body.contrasenia
+            , contraseña: req.body.password
             , email: req.body.email
         });
 
