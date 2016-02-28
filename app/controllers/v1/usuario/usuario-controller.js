@@ -42,7 +42,7 @@ function signup(req, res, next) {
     console.log(req.body);
     //console.log(res.json(req.body));;
     //console.log("Agregando usuario...."+req.body.nombre);
-
+    req.body.contraseña = req.body.password;
     var Usuario = require('../../../models/usuario');
     var UsuarioService = require('../../../services/usuario/usuario-service');
     var user = new Usuario({
