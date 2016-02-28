@@ -5,7 +5,7 @@ var settingsConfig = require('../config/settings/settings-config');
 
 exports.ensureAuthenticated = function(req, res, next) {
 
-    if(req.url=='/auth/login' || req.url== '/auth/signup'){
+    if(req.url=='/auth/login' || req.url== "/auth/signup"){
         next();
     }
     else

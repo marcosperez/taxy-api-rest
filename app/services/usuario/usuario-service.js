@@ -26,7 +26,7 @@ function existeUsuario(user) {
     var Usuario = require('../../models/usuario');
 
     Usuario.findOne({
-        nombre: req.body.nombre.toLowerCase()
+        nombre: user.nombre.toLowerCase()
     }, function (err, user) {
         if (err) {
             return false;
