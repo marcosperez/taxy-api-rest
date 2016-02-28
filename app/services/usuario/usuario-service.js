@@ -28,10 +28,13 @@ function existeUsuario(user) {
     Usuario.findOne({
         nombre: user.nombre.toLowerCase()
     }, function (err, user) {
-        if (err) {
+        if (err) return err;
+
+        console.log("usuario: "+user);
+        if(user)
             return false;
-        }
-        return true;
+        elsee
+            return true;
     });
 }
 
