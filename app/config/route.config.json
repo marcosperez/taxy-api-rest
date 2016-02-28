@@ -4,13 +4,13 @@
             "route": "/auth/login"
             , "method": "POST"
             , "controller": "../controllers/v1/usuario/usuario-controller"
-            , "action": 'login'
+            , "action": "login"
     }
         , {
             "route": "/auth/signup"
             , "method": "POST"
             , "controller": "../controllers/v1/usuario/usuario-controller"
-            , "action": 'signup'
+            , "action": "signup"
     }
         , {
             "route": "/v1/notas"
