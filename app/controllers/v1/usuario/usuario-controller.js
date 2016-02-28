@@ -9,8 +9,6 @@ function UsuarioController() {
 }
 
 function post(req, res, next) {
-  //
-
     // Creación de variables para cargar el modelo
 
     var Usuario = require('../../../models/usuario');
@@ -26,7 +24,7 @@ function post(req, res, next) {
 
         // Si el usuario existe o no
         // Y si la contraseña es correcta
-        console.log(user.nombre+"   "+user.contraseña);
+        console.log(req.body.contraseña+"   "+user.contraseña);
         if(user.contraseña == req.body.contraseña)
         {
             //autenticacion correcta
