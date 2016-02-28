@@ -54,7 +54,7 @@ function signup(req, res, next) {
     if (UsuarioService.existeUsuario(user)) {
         console.log("El usuario ya existe")
     } else {
-
+        console.log("Salvando usuario: "+req.body);
         user.save(function (err, user) {
             if (err) return console.error(err);
 
