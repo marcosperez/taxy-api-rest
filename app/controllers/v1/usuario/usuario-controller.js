@@ -19,20 +19,19 @@ function post(req, res, next) {
 
     Usuario.findOne({nombre: req.body.nombre.toLowerCase()}, function(err, user) {
         // Comprobar si hay errores
+
+        //error de autenticacion
+        if(err)
+             return res.status(401);
+
         // Si el usuario existe o no
         // Y si la contraseña es correcta
-            console.log(user.nombre+"   "+user.contraseña);
-
+        console.log(user.nombre+"   "+user.contraseña);
         if(user.contraseña == req.body.contraseña)
         {
             //autenticacion correcta
              console.log("Enviando token...");
              return res.status(200).send({token: UsuarioService.createToken(user)});
-        }
-        else
-        {
-            //error de autenticacion
-             return res.status(401);
         }
 
 
