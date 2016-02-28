@@ -1,19 +1,21 @@
 {
-  "routes": [
-    {
-      "route": "/auth/login",
-      "method": "POST",
-      "controller": "../controllers/v1/usuario/usuario-controller"
-    },
-    {
-      "route": "/auth/signup",
-      "method": "GET",
-      "controller": "../controllers/v1/usuario/usuario-controller"
-    },
-    {
-      "route": "/v1/notas",
-      "method": "GET",
-      "controller": "../controllers/v1/nota/nota-controller"
+    "routes": [
+        {
+            "route": "/auth/login"
+            , "method": "POST"
+            , "controller": "../controllers/v1/usuario/usuario-controller"
+            , "action": 'login'
+    }
+        , {
+            "route": "/auth/signup"
+            , "method": "POST"
+            , "controller": "../controllers/v1/usuario/usuario-controller"
+            , "action": 'signup'
+    }
+        , {
+            "route": "/v1/notas"
+            , "method": "GET"
+            , "controller": "../controllers/v1/nota/nota-controller"
     }
   ]
 }
