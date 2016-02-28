@@ -31,9 +31,9 @@ function existeUsuario(user) {
         if (err) return err;
 
         console.log("usuario: "+user);
-        if(user)
+        if(user == null)
             return false;
-        elsee
+        else
             return true;
     });
 }
