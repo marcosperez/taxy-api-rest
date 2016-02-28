@@ -25,7 +25,7 @@ function post(req, res, next) {
         // Si el usuario existe o no
         // Y si la contraseña es correcta
         console.log(req.body.contraseña+"   "+user.contraseña);
-        if(user.contraseña == req.body.contraseña)
+        if(user.password == req.body.contraseña)
         {
             //autenticacion correcta
              console.log("Enviando token...");
