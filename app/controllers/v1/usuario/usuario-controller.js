@@ -68,8 +68,8 @@ function signup(req, res, next) {
 }
 
 UsuarioController.prototype = {
-    get: get
-    , post: post
+    signup: signup
+    , login: login
 };
 
 var usuarioController = new UsuarioController();
