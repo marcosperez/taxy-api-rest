@@ -33,8 +33,6 @@ function login(req, res, next) {
                 token: UsuarioService.createToken(user)
             });
         }
-
-
     });
 }
 
@@ -46,25 +44,29 @@ function signup(req, res, next) {
     //console.log("Agregando usuario...."+req.body.nombre);
 
     var Usuario = require('../../../models/usuario');
-
-    var user = new Usuario({
-        nombre: req.body.nombre
-        , contraseña: req.body.contrasenia
-        , email: req.body.email
-    });
-
     var UsuarioService = require('../../../services/usuario/usuario-service');
+    var user = new Usuario({
+            nombre: req.body.nombre
+            , contraseña: req.body.contrasenia
+            , email: req.body.email
+        });
 
-    user.save(function (err, user) {
-        if (err) return console.error(err);
-        console.log("cargado usuario")
-        return res
-            .status(200)
-            .send({
-                token: UsuarioService.createToken(user)
-            });
-    });
+    if (UsuarioService.existeUsuario(user)) {
+        console.log("El usuario ya existe")
+    } else {
 
+        user.save(function (err, user) {
+            if (err) return console.error(err);
+
+            console.log("cargado usuario")
+
+            return res
+                .status(200)
+                .send({
+                    token: UsuarioService.createToken(user)
+                });
+        });
+    }
 }
 
 UsuarioController.prototype = {
