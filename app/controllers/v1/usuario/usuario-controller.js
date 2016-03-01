@@ -50,7 +50,7 @@ function signup(req, res, next) {
 
 
     user.save(function (err, user) {
-        if (err) return {
+        if (err)  {
             console.log("en la funcion save " + err);
             return res
                 .status(422)
