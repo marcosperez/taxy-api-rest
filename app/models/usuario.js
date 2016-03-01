@@ -10,4 +10,18 @@ var UsuarioSchema   = new Schema({
     fechaCreacion:{type:Date , default:Date.now}
 });
 
-module.exports = mongoose.model('Usuario', UsuarioSchema);
+Usuario = mongoose.model('Usuario', UsuarioSchema);
+
+UsuarioSchema.pre('save', function (next) {
+    var self = this;
+    Usuario.find({nombre : self.nombre}, function (err, usuarios) {
+        if (!usuarios.length){
+            next();
+        }else{
+            console.log('El usuario ya existe: ',self.name);
+            next(new Error("User exists!"));
+        }
+    });
+}) ;
+
+module.exports = Usuario;

@@ -43,29 +43,24 @@ function signup(req, res, next) {
     var UsuarioService = require('../../../services/usuario/usuario-service');
 
     var user = new Usuario({
-            nombre: req.body.nombre
-            , contraseña: req.body.password
-            , email: req.body.email
-        });
-    var resultado= UsuarioService.existeUsuario(user);
+        nombre: req.body.nombre
+        , contraseña: req.body.password
+        , email: req.body.email
+    });
 
-    console.log("resultado: "+resultado);
-    if (resultado) {
-        console.log("El usuario ya existe")
-    } else {
-        console.log("Salvando usuario: "+req.body);
-        user.save(function (err, user) {
-            if (err) return console.error(err);
 
-            console.log("cargado usuario")
+    user.save(function (err, user) {
+        if (err) return console.error(err);
 
-            return res
-                .status(200)
-                .send({
-                    token: UsuarioService.createToken(user)
-                });
-        });
-    }
+         console.log("Salvando usuario: " + req.body);
+
+        return res
+            .status(200)
+            .send({
+                token: UsuarioService.createToken(user)
+            });
+    });
+
 }
 
 UsuarioController.prototype = {

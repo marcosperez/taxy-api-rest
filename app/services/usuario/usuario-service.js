@@ -22,29 +22,10 @@ function createToken(user) {
     return jwt.encode(payload, settingsConfig.settings.TOKEN_SECRET);
 }
 
-function existeUsuario(usuario) {
-    var Usuario = require('../../models/usuario');
 
-    console.log("Nombre: "+usuario.nombre);
-    Usuario.findOne({
-        nombre: usuario.nombre.toLowerCase()
-    }, function (err, user) {
-        if (err) {
-            console.log("Error: "+err);
-            return err;
-        }
-
-        console.log("usuario: "+user);
-        if(user.length)
-            return true;
-        else
-            return false;
-    });
-}
 
 UsuarioService.prototype = {
     createToken: createToken
-    , existeUsuario: existeUsuario
 };
 
 
