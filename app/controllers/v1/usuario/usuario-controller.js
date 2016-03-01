@@ -51,19 +51,20 @@ function signup(req, res, next) {
 
     user.save(function (err, user) {
         if (err) return {
-            console.error("en la funcion save "+err);
-           return res
-            .status(422 )
-            .send();
+            console.log("en la funcion save " + err);
+            return res
+                .status(422)
+                .send();
+        } else {
+
+            console.log("Salvando usuario: " + req.body);
+
+            return res
+                .status(200)
+                .send({
+                    token: UsuarioService.createToken(user)
+                });
         }
-
-         console.log("Salvando usuario: " + req.body);
-
-        return res
-            .status(200)
-            .send({
-                token: UsuarioService.createToken(user)
-            });
     });
 
 }
