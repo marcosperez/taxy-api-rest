@@ -19,7 +19,8 @@ UsuarioSchema.pre('save', function (next) {
             next();
         }else{
             console.log('El usuario ya existe: ',self.name);
-            next(new Error("User exists!"));
+            res.status(500).send('Something broke!');
+            next(new Error("El usuario ya existe!"));
         }
     });
 }) ;

@@ -50,7 +50,12 @@ function signup(req, res, next) {
 
 
     user.save(function (err, user) {
-        if (err) return console.error(err);
+        if (err) return {
+            console.error("en la funcion save "+err);
+           return res
+            .status(422 )
+            .send();
+        }
 
          console.log("Salvando usuario: " + req.body);
 
