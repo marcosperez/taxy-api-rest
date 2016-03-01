@@ -22,11 +22,11 @@ function createToken(user) {
     return jwt.encode(payload, settingsConfig.settings.TOKEN_SECRET);
 }
 
-function existeUsuario(user) {
+function existeUsuario(usuario) {
     var Usuario = require('../../models/usuario');
 
     Usuario.findOne({
-        nombre: user.nombre.toLowerCase()
+        nombre: usuario.nombre.toLowerCase()
     }, function (err, user) {
         if (err) return err;
 

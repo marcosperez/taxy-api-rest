@@ -38,11 +38,7 @@ function login(req, res, next) {
 
 function signup(req, res, next) {
 
-    // Creación de variables para cargar el modelo
-    console.log(req.body);
-    //console.log(res.json(req.body));;
-    //console.log("Agregando usuario...."+req.body.nombre);
-    console.log(req.body);
+
     var Usuario = require('../../../models/usuario');
     var UsuarioService = require('../../../services/usuario/usuario-service');
     var user = new Usuario({
@@ -50,8 +46,9 @@ function signup(req, res, next) {
             , contraseña: req.body.password
             , email: req.body.email
         });
-
-    if (UsuarioService.existeUsuario(user)) {
+    var resultado= UsuarioService.existeUsuario(user);
+    console.log("resultado: "+resultado);
+    if (resultado) {
         console.log("El usuario ya existe")
     } else {
         console.log("Salvando usuario: "+req.body);
