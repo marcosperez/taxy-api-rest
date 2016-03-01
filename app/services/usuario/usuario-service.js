@@ -25,6 +25,7 @@ function createToken(user) {
 function existeUsuario(usuario) {
     var Usuario = require('../../models/usuario');
 
+    console.log("Nombre: "+usuario.nombre);
     Usuario.findOne({
         nombre: usuario.nombre.toLowerCase()
     }, function (err, user) {

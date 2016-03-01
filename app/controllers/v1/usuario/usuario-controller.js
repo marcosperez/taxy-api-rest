@@ -41,12 +41,14 @@ function signup(req, res, next) {
 
     var Usuario = require('../../../models/usuario');
     var UsuarioService = require('../../../services/usuario/usuario-service');
+
     var user = new Usuario({
             nombre: req.body.nombre
             , contraseña: req.body.password
             , email: req.body.email
         });
     var resultado= UsuarioService.existeUsuario(user);
+
     console.log("resultado: "+resultado);
     if (resultado) {
         console.log("El usuario ya existe")
