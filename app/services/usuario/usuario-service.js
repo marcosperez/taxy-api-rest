@@ -35,10 +35,10 @@ function existeUsuario(usuario) {
         }
 
         console.log("usuario: "+user);
-        if(user == null)
-            return false;
-        else
+        if(user.length)
             return true;
+        else
+            return false;
     });
 }
 
